@@ -1,0 +1,437 @@
+/* =========================================================
+   CCSCL - FUTURE ROADMAP PAGE
+========================================================= */
+
+.roadmap-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--background, #faf8f3);
+  color: var(--text-dark, #1b2433);
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.roadmap-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 55px 6%;
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 86% 18%,
+      rgba(226, 194, 117, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      var(--navy-dark, #07173a),
+      var(--navy, #0a1f44) 58%,
+      var(--navy-light, #12306a)
+    );
+
+  border-bottom: 4px solid var(--gold, #b8892b);
+}
+
+.roadmap-hero::after {
+  content: "";
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: -105px;
+  top: -175px;
+
+  border-radius: 50%;
+  border: 65px solid rgba(255, 255, 255, 0.05);
+
+  pointer-events: none;
+}
+
+.roadmap-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(1000px, 100%);
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.roadmap-badge {
+  display: inline-block;
+
+  margin-bottom: 15px;
+  padding: 7px 17px;
+
+  border: 1px solid rgba(226, 194, 117, 0.55);
+  border-radius: 30px;
+
+  background: rgba(184, 137, 43, 0.13);
+  color: var(--gold-light, #e2c275);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.roadmap-hero h1 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.roadmap-hero p {
+  max-width: 800px;
+  margin: 0 auto;
+
+  color: #d6deea;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   ROADMAP CONTENT
+========================================================= */
+
+.roadmap-content {
+  padding: 32px 4% 55px;
+}
+
+.roadmap-container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   ORIGINAL ROADMAP IMAGE CARD
+========================================================= */
+
+.roadmap-image-card {
+  position: relative;
+
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border, #e8e2d4);
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 30px rgba(10, 31, 68, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.roadmap-image-card:hover {
+  border-color: var(--gold, #b8892b);
+
+  box-shadow:
+    0 14px 35px rgba(10, 31, 68, 0.12);
+}
+
+.roadmap-image-button {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  padding: 0;
+
+  background: #ffffff;
+
+  border: none;
+  border-radius: 10px;
+
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.roadmap-main-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+}
+
+/* =========================================================
+   EXPAND IMAGE ICON
+========================================================= */
+
+.roadmap-expand-icon {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  color: #ffffff;
+  background: rgba(10, 31, 68, 0.9);
+
+  border: 1px solid var(--gold-light, #e2c275);
+  border-radius: 9px;
+
+  box-shadow:
+    0 4px 12px rgba(10, 31, 68, 0.18);
+
+  transition: background 0.25s ease;
+}
+
+.roadmap-image-button:hover .roadmap-expand-icon {
+  background: var(--gold, #b8892b);
+}
+
+.roadmap-image-button:focus-visible {
+  outline: 3px solid var(--gold, #b8892b);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   IMAGE CAPTION
+========================================================= */
+
+.roadmap-image-caption {
+  margin: 0;
+  padding: 12px 10px 5px;
+
+  text-align: center;
+
+  color: var(--text-light, #5b6577);
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ACCESSIBLE ROADMAP TEXT
+========================================================= */
+
+.roadmap-accessible-content {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================
+   FULL-SCREEN LIGHTBOX
+========================================================= */
+
+.roadmap-lightbox {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+
+  margin: 0;
+  padding: 60px 25px 25px;
+
+  border: none;
+
+  background: rgba(3, 9, 22, 0.95);
+
+  overflow: auto;
+}
+
+.roadmap-lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roadmap-lightbox::backdrop {
+  background: rgba(3, 9, 22, 0.9);
+}
+
+.roadmap-lightbox-content {
+  width: min(1500px, 100%);
+}
+
+.roadmap-lightbox-content img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: calc(100vh - 100px);
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.roadmap-lightbox-close {
+  position: fixed;
+
+  top: 15px;
+  right: 20px;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+
+  font-size: 30px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.roadmap-lightbox-close:hover {
+  background: var(--gold, #b8892b);
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 760px) {
+  .roadmap-hero {
+    padding: 40px 5%;
+  }
+
+  .roadmap-hero p {
+    font-size: 14px;
+  }
+
+  .roadmap-content {
+    padding: 22px 3% 40px;
+  }
+
+  .roadmap-image-card {
+    padding: 5px;
+    border-radius: 12px;
+  }
+
+  .roadmap-expand-icon {
+    top: 8px;
+    right: 8px;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 6px;
+  }
+
+  .roadmap-expand-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .roadmap-image-caption {
+    font-size: 11px;
+  }
+
+  .roadmap-lightbox {
+    padding: 60px 8px 15px;
+  }
+
+  .roadmap-accessible-content {
+    position: static;
+
+    width: auto;
+    height: auto;
+
+    margin: 20px 0 0;
+    padding: 22px;
+
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+
+    background: #ffffff;
+    border: 1px solid var(--border, #e8e2d4);
+    border-radius: 12px;
+  }
+
+  .roadmap-accessible-content h2 {
+    margin: 18px 0 10px;
+
+    color: var(--navy, #0a1f44);
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+  }
+
+  .roadmap-accessible-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .roadmap-accessible-content ul {
+    margin: 0;
+    padding-left: 20px;
+
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .roadmap-image-card,
+  .roadmap-expand-icon,
+  .roadmap-lightbox-close {
+    transition: none;
+  }
+}
